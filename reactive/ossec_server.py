@@ -1,6 +1,5 @@
 from charms.reactive import when_not, set_state
 
-# from charms.reactive import when, when_not, set_state
 
 @when_not('ossec-server.installed')
 def install_ossec_server():
