@@ -9,5 +9,5 @@ tags:
   - security
 subordinate: false
 provides:
-  service:
+  ossec-server:
     interface: ossec

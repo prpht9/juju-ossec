@@ -1,1 +1,2 @@
 includes: ['layer:basic']  # if you use any interfaces, add them here
+repo: git@github.com:prpht9/juju-ossec.git#reactive-python
