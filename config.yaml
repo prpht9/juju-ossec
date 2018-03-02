@@ -1,0 +1,13 @@
+options:
+  log-level:
+    type: string
+    default: "WARNING"
+    description: "FATAL ERROR WARNING INFO DEBUG"
+  smtp-server:
+    type: string
+    default: "localhost"
+    description: "default mail gateway"
+  smtp-port:
+    type: int
+    default: 25
+    description: "Default mail gateway port"

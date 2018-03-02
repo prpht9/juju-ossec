@@ -1,0 +1,13 @@
+name: ossec-server
+summary: ossec server charm
+maintainer: Chris Scheper <prpht9@gmail.com>
+description: |
+  ossec server charm for agents to interface
+tags:
+  # Replace "misc" with one or more whitelisted tags from this list:
+  # https://jujucharms.com/docs/stable/authors-charm-metadata
+  - security
+subordinate: false
+provides:
+  service:
+    interface: ossec
