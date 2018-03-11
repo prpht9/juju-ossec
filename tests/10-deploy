@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 
 import amulet
 import requests
@@ -8,19 +8,16 @@ import unittest
 class TestCharm(unittest.TestCase):
     def setUp(self):
         self.d = amulet.Deployment()
-
-        self.d.add('ossec-server')
+        self.d.add('ossec-server', series='xenial')
         self.d.expose('ossec-server')
-
         self.d.setup(timeout=900)
         self.d.sentry.wait()
 
-        self.unit = self.d.sentry['ossec-server'][0]
-
     def test_service(self):
         # test we can access over http
-        page = requests.get('http://{}'.format(self.unit.info['public-address']))
-        self.assertEqual(page.status_code, 200)
+        for sentry in self.d.sentry['ossec-server']:
+            info = sentry.directory_stat('/var/ossec')
+            self.assertEqual(info['mode'], '0o40550')
         # Now you can use self.d.sentry[SERVICE][UNIT] to address each of the units and perform
         # more in-depth steps. Each self.d.sentry[SERVICE][UNIT] has the following methods:
         # - .info - An array of the information of that unit from Juju

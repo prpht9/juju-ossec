@@ -8,7 +8,7 @@ tags:
   # https://jujucharms.com/docs/stable/authors-charm-metadata
   - security
 subordinate: false
-series: [ xenial ]
+series: [ precise, trusty, xenial ]
 provides:
   ossec-server:
     interface: ossec

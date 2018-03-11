@@ -1,0 +1,8 @@
+#!/bin/bash
+
+wget -q -O - https://www.atomicorp.com/RPM-GPG-KEY.atomicorp.txt  | sudo apt-key add -
+source /etc/lsb-release
+echo "deb https://updates.atomicorp.com/channels/atomic/ubuntu $DISTRIB_CODENAME main" >>  /etc/apt/sources.list.d/atomic.list
+apt-get update
+apt-get install ossec-hids-server -y
+
