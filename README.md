@@ -13,4 +13,5 @@ charms which include the ossec-agent layer.
 * config-changed actually working
 * outgoing email
 * outgoing syslog
+* remove tox_unit.ini (not used)
 
